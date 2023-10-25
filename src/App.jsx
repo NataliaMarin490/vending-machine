@@ -1,16 +1,31 @@
 import { useState } from 'react';
+import { Tooltip } from 'react-tooltip'
 
+import ActionsPanel from './components/ActionsPanel/ActionsPanel';
 import Item from './components/Item/item';
+
 
 import InsertCoin from './assets/insert-coin.png';
 import Choice from './assets/choice.png';
 import TakeItem from './assets/take-away.png';
+import Candy from './assets/products/candy.png';
+import Chips from './assets/products/chips.png';
+import Chocolate from './assets/products/chocolate.png';
+import Cookies from './assets/products/cookies.png';
+import HotDrink from './assets/products/hot_drink.png';
+import Juice from './assets/products/juice.png';
+import Milk from './assets/products/milk.png';
+import Soda from './assets/products/soda.png';
+import Water from './assets/products/water.png';
 
 import './App.scss';
+
 
 function App() {
 
   const [products, onSetProducts] = useState(burnedProducts);
+  const [screen, onSetScreen] = useState('');
+  const [selectedProduct, onSetSelectedProduct] = useState({});
 
   return (
     <div className='VendingMachine'>
@@ -39,6 +54,7 @@ function App() {
             Press <em>Return Coin</em> if you want to get your money back.
           </span>
         </div>
+        <span className='HowToUse__BottomText'>- Enjoy your product -</span>
       </section>
       <div className='VendingMachine__Panel'>
         <section className='ProductsContainer'>
@@ -47,14 +63,20 @@ function App() {
               key={`Item-${item.name}-${item.id}`}
               name={item.name}
               price={item.price}
+              image={item.image}
+              screen={screen}
+              onSetScreen={onSetScreen}
             />
           ))}
         </section>
         <section className='VendingMachine__Actions'>
-          <div className='Screen'>Screen</div>
-          <div className='Buttons'> buttons</div>
+          <ActionsPanel 
+            selectedProduct={selectedProduct}
+            img={Cookies}
+          />
         </section>
       </div>
+      <Tooltip id="coin" />
     </div>
   );
 }
@@ -66,37 +88,47 @@ const burnedProducts = [
     id: 1,
     name: 'Water',
     price: 0.65,
+    image: Water,
   }, {
     id: 2,
     name: 'Juice',
     price: 1.00,
+    image: Juice,
   }, {
     id: 3,
     name: 'Soda',
     price: 1.50,
+    image: Soda,
   }, {
     id: 4,
-    name: 'Milk',
-    price: 1.70,
-  }, {
-    id: 5,
     name: 'Hot drink',
     price: 2.00,
+    image: HotDrink,
   }, {
-    id: 6,
+    id: 5,
     name: 'Cookies',
     price: 1.50,
+    image: Cookies,
   }, {
-    id: 7,
+    id: 6,
     name: 'Chips',
     price: 0.70,
+    image: Chips,
   }, {
-    id: 8,
+    id: 7,
     name: 'Candy',
     price: 0.25,
+    image: Candy,
   }, {
-    id: 9,
-    name: 'Chocolate bar',
+    id: 8,
+    name: 'Chocolate',
     price: 1.85,
-  }
+    image: Chocolate,
+  },
+  //  {
+  //   id: 9,
+  //   name: 'Milk',
+  //   price: 1.70,
+  //   image: Milk,
+  // },
 ];
