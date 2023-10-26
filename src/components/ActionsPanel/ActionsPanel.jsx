@@ -42,10 +42,6 @@ const ActionsPanel = ({
     if (credit !== 0) onSetError(false);
   }, [credit]);
 
-  useEffect(() => {
-    onSearchCoinImage()
-  }, [returnedMoney]);
-
   const onReturnMoney = () => {
     if (credit === 0) {
       onSetError(true);
@@ -75,11 +71,6 @@ const ActionsPanel = ({
         prevState + value
       ));
     }
-  };
-
-  const onSearchCoinImage = () => {
-    if (returnedMoney.length === 0) return;
-    console.log(returnedMoney[0].split('x'))
   };
 
   return (
@@ -166,7 +157,6 @@ const ActionsPanel = ({
       </div>
       <div className='Output'>
         {selectedProduct.image !== '' && <img src={selectedProduct.image} alt='output' />}
-        {/* {returnedMoney.length !== 0 && <img src={selectedProduct.image} alt='output' />} */}
       </div>
     </>
   );

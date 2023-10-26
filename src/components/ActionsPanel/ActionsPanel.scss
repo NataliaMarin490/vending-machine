@@ -43,11 +43,8 @@
   flex-direction: column;
   margin: 20px 20px;
   position: relative;
-  // border-bottom: 2px solid black;
 
   & .Button {
-    // height: 100px;
-    // width: 100px;
     position: absolute;
     transition: transform 0.5s;
     filter: drop-shadow(6px 6px 6px #555555);
