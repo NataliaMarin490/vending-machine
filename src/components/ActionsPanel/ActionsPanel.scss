@@ -1,19 +1,37 @@
 .Screen {
-  height: 100px;
+  height: 190px;
   width: 70%;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+
+  padding-right: 10px;
 
   color: white;
   border-radius: 5px;
   border-bottom: 2px solid black;
 
-  & span {
+  & div {
     width: 100%;
+    display: flex;
+
+    & span:first-of-type {
+      text-align: left;
+    }
+  }
+
+  & span {
+    width: 50%;
     text-align: right;
+  }
+
+  & span[data-error="true"] {
+    transition: all 0.5s;
+    color: rgb(195 69 69);
+    font-weight: 700;
+    letter-spacing: 0.5px;
   }
 }
 
@@ -25,7 +43,7 @@
   flex-direction: column;
   margin: 20px 20px;
   position: relative;
-  border-bottom: 2px solid black;
+  // border-bottom: 2px solid black;
 
   & .Button {
     // height: 100px;
@@ -49,15 +67,15 @@
   }
 
   & :nth-child(2) {
-    left: 40px;
+    left: 30px;
   }
 
   & :nth-child(3) {
-    left: 110px;
+    left: 80px;
   }
 
   & :nth-child(4) {
-    left: 170px;
+    left: 130px;
   }
 
   & .ReturnCoin__Button {
@@ -72,7 +90,7 @@
     justify-content: center;
     align-items: center;
 
-    background-color: #59873b;
+    background-image: linear-gradient(to right, #59873b, #608e35, #67962e, #709d25, #79a418);
     color: white;
     border-radius: 10px;
     box-shadow: rgb(111 107 107 / 40%) 3px 3px 10px;
@@ -95,10 +113,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #252424;
-  border-radius: 20px;
-  
+
   & img {
+    background-color: #252424;
+    border-radius: 20px;
     width: 100%;
     transition: transform 0.5s;
 
@@ -109,51 +127,78 @@
   }
 }
 
-@media (max-width: 1300px) {
+
+@media (min-width: 1800px) {
+  .Input {
+    & :nth-child(1) {
+      left: -20px;
+    }
+
+    & :nth-child(2) {
+      left: 60px;
+    }
+
+    & :nth-child(3) {
+      left: 150px;
+    }
+
+    & :nth-child(4) {
+      left: 230px;
+    }
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1799px) {
   .Input {
     & .Button {
       & img {
         width: 80px;
       }
     }
-  }
-}
-
-@media (max-width: 1100px) {
-  .Input {
-    & .Button {
-      & img {
-        // width: 70px;
-      }
-    }
 
     & :nth-child(1) {
       left: -10px;
     }
-  
+
     & :nth-child(2) {
-      left: 40px;
+      left: 50px;
     }
-  
+
     & :nth-child(3) {
-      left: 90px;
+      left: 110px;
     }
-  
+
     & :nth-child(4) {
-      left: 140px;
+      left: 170px;
     }
   }
 }
 
 @media (min-height: 1001px) and (max-height: 1300px) {
   .ReturnCoin__Button {
-    top: 170px !important;
+    top: 160px !important;
+  }
+
+  .Input {
+    & .Button {
+      & img {
+        width: 70px;
+      }
+    }
   }
 }
 
-@media (min-height: 871px) and (max-height: 1000px) {
+@media (min-height: 600px) and (max-height: 1000px) {
   .ReturnCoin__Button {
-    top: 150px !important;
+    top: 130px !important;
+  }
+
+  .Input {
+    & .Button {
+      & img {
+        width: 80px;
+      }
+    }
   }
 }
 

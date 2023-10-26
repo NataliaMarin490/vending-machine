@@ -1,5 +1,5 @@
 .VendingMachine {
-  width: 70vw;
+  width: 60vw;
   height: 99vh;
 
   display: flex;
@@ -107,7 +107,7 @@
 
     margin-top: 10px;
     border-radius: 10px;
-    background-color: #494949;
+    background-image: linear-gradient(to left top, #888888, #797979, #6b6b6b, #5d5d5d, #4f4f4f);
     align-items: center;
 
     & .ProductsContainer {
@@ -122,6 +122,58 @@
 
       border-radius: 5px;
       border-radius: 10px;
+
+      & .Products {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        position: relative;
+        margin: 10px;
+        transition: transform 0.7s;
+        background-color: #313030;
+        border-radius: 10px;
+
+        & .ProductQuantity {
+          width: 10px;
+          height: 15px;
+
+          position: absolute;
+          top: 0;
+          right: 0;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          background-color: #59873b;
+        }
+
+        & img {
+          width: 60%;
+          height: 100%;
+          object-fit: cover;
+          cursor: pointer;
+          // filter: drop-shadow(2px 3px 5px #636363); 
+        }
+
+        & span {
+          position: absolute;
+          bottom: 10px;
+          color: white;
+          padding: 2px 5px;
+          background-color: #59873b;
+          // filter: drop-shadow(10px 3px 5px #000000); 
+          border-radius: 10px;
+          font-size: 12px;
+          font-weight: 600;
+          cursor: pointer;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
 
     & .VendingMachine__Actions {
@@ -132,7 +184,7 @@
       flex-direction: column;
       align-items: center;
 
-      background-color: rgb(53 51 51);
+      background-color: #3d3d3d;
       border-top-left-radius: 30px;
       border-bottom-left-radius: 30px;
       border-top-right-radius: 10px;
