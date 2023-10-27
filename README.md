@@ -34,4 +34,53 @@ This project has undergone testing to ensure its functionality and reliability. 
 2.  Run `npm install` to install the necessary dependencies.
 3.  Use `npm run dev` to start the development server and view the vending machine in your web browser.
 
-Feel free to explore the code to learn more about how this project is built and customize it to suit your needs. Enjoy your virtual vending machine experience!
+## Docker
+
+This section provides information on how to set up and run the application using Docker.
+
+# Prerequisites
+
+Before you start, ensure you have the following software installed on your machine:
+
+- [Docker](https://www.docker.com/)
+
+## Docker Compose Configuration (docker-compose.yml)
+
+The `docker-compose.yml` file defines a Docker service for running the Vending Machine application. Here are the key details:
+
+```yaml
+version: "3.4"
+services:
+  vending_machine:
+    image: node:18-alpine
+    container_name: vending_machine
+    entrypoint: /bin/sh
+    ports:
+      - 3000:3000
+    working_dir: /srv/app
+    volumes:
+      - type: bind
+        source: ./
+        target: /srv/app
+    tty: true
+```
+
+## Building and Running the Application
+
+To build and run the application using Docker, follow these steps:
+
+1.  Make sure you have Docker installed on your system.
+
+2.  Open a terminal and navigate to the project directory.
+
+3.  Build the Docker image and start the application:
+    `docker-compose up --build --no-recreate -d`
+    `docker exec -it vending_machine sh`
+    `/svr/app # npm i && npm run dev`
+
+The Vending Machine web app should be accessible at http://localhost:3000 in your browser.
+
+That's it! You now have the Vending Machine web application running in a Docker container.
+
+Feel free to modify the Docker Compose configuration or the Dockerfile according to your project's specific needs.
+Explore the code to learn more about how this project is built and customize it to suit your needs. Enjoy your virtual vending machine experience!
