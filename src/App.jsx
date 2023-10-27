@@ -121,7 +121,7 @@ function App() {
                 onClick={() => onBuyProduct(item)}
               >
                 <span className='ProductQuantity'>{item.quantity}</span>
-                <img src={item.image} alt='item' />
+                <img src={item.image} alt='itemImg' />
                 <span>{item.name} ${item.price}</span>
               </div>
             )))}

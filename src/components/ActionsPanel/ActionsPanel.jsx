@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import five from '../../assets/products/five_cents.png';
 import ten from '../../assets/products/ten.png';
@@ -86,30 +86,30 @@ const ActionsPanel = ({
         </div>
         {selectedProduct.name && (
           <div>
-            <span className='Screen-infoText'>
+            <span>
               <strong>Product:</strong>
             </span>
-            <span className='Screen-infoNumber'>
+            <span>
               {selectedProduct.name}
             </span>
           </div>
         )}
         {prevCredit !== 0 && (
           <div>
-            <span className='Screen-infoText'>
+            <span>
               <strong>You had: </strong>
             </span>
-            <span className='Screen-infoNumber'>
+            <span>
               ${prevCredit.toFixed(2)}
             </span>
           </div>
         )}
         {Object.values(returnedMoney).length > 0 && (
           <div>
-            <span className='Screen-infoText'>
+            <span>
               <strong>You get: </strong>
             </span>
-            <span className='Screen-infoNumber'>
+            <span>
               {returnedMoney}
             </span>
           </div>
