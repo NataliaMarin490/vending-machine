@@ -65,6 +65,7 @@ function App() {
       return;
     }
     if (item.quantity > 0) {
+      onSetError(true);
       let newProducts = [...products];
       const itemIndex = products.findIndex((val) => (val.name === item.name) && val.price === item.price);
       newProducts[itemIndex].quantity -= 1;

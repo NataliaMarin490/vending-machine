@@ -54,6 +54,7 @@ const ActionsPanel = ({
       return;
     }
     const valueToReturn = onCalculateCreditToReturn(credit, availableCoins);
+    onSetError(false);
     onSetPrevCredit(credit);
     onSetReturnedMoney(valueToReturn);
     onSetCredits(0);
