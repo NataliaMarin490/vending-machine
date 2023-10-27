@@ -74,9 +74,9 @@ To build and run the application using Docker, follow these steps:
 2.  Open a terminal and navigate to the project directory.
 
 3.  Build the Docker image and start the application:
-    `docker-compose up --build --no-recreate -d`
-    `docker exec -it vending_machine sh`
-    `/svr/app # npm i && npm run dev`
+    - `docker-compose up --build --no-recreate -d`
+    - `docker exec -it vending_machine sh`
+    - `/svr/app # npm i && npm run dev`
 
 The Vending Machine web app should be accessible at http://localhost:3000 in your browser.
 
